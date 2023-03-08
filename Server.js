@@ -93,4 +93,4 @@ app.delete('/deletePosts/:id', function (req, res) {
 
 
 
-app.listen(PORT, hostname () => console.log(`Server Start on localhost ${PORT}`))
+app.listen(PORT,hostname,  () => console.log(`Server Start on localhost ${PORT}`))
