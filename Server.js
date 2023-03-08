@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors=require('cors')
 dotenv.config();
 
-const hostname='0.0.0.0'
+
 const PORT = process.env.PORT 
 const app = express();
 app.use(express.json());
@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
-    connectionLimit: 10
+    connectionLimit: 20
 })
 
 connection.connect(function (err, result) {
@@ -93,4 +93,4 @@ app.delete('/deletePosts/:id', function (req, res) {
 
 
 
-app.listen(PORT,hostname,  () => console.log(`Server Start on localhost ${PORT}`))
+app.listen(PORT,  () => console.log(`Server Start on localhost ${PORT}`))
