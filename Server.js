@@ -4,7 +4,8 @@ const dotenv = require('dotenv');
 const cors=require('cors')
 dotenv.config();
 
-const PORT = process.env.PORT
+const hostname='0.0.0.0'
+const PORT = process.env.PORT 
 const app = express();
 app.use(express.json());
 app.use(cors())
@@ -92,4 +93,4 @@ app.delete('/deletePosts/:id', function (req, res) {
 
 
 
-app.listen(PORT, () => console.log(`Server Start on localhost ${PORT}`))
+app.listen(PORT, hostname () => console.log(`Server Start on localhost ${PORT}`))
