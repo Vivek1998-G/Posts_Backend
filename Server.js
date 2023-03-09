@@ -5,18 +5,17 @@ const cors=require('cors')
 dotenv.config();
 
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT || 4000
 const app = express();
 app.use(express.json());
 app.use(cors())
 
 const connection = mysql.createConnection({
-    host: process.env.HOST,
+    host: 'cloud_instance_private_ip',
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
-    port:3306,
-    connectionLimit: 20
+    connectionLimit: 10
 })
 
 connection.connect(function (err, result) {
