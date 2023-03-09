@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors())
 
 const connection = mysql.createConnection({
-    host: 'cloud_instance_private_ip',
+    host: 'localhost',
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
